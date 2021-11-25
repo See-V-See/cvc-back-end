@@ -1,0 +1,150 @@
+{% load static %}
+<!doctype html>
+<html lang="en-US">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>See-V-See Team</title>
+    <meta name="description" content="Unika - Responsive One Page HTML5 Template">
+    <meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
+    <meta name="author" content="imransdesign.com">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts  -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    <!-- Body font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <!-- Navbar font -->
+
+    <!-- Libs and Plugins CSS -->
+    <link rel="stylesheet" href="{% static 'inc/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'inc/animations/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'inc/font-awesome/css/font-awesome.min.css' %}"> <!-- Font Icons -->
+    <link rel="stylesheet" href="{% static 'inc/owl-carousel/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'inc/owl-carousel/css/owl.theme.css' %}">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}">
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{% static 'css/skin/cool-gray.css' %}">
+    <!-- <link rel="stylesheet" href="css/skin/ice-blue.css"> -->
+    <!-- <link rel="stylesheet" href="css/skin/summer-orange.css"> -->
+    <!-- <link rel="stylesheet" href="css/skin/fresh-lime.css"> -->
+    <!-- <link rel="stylesheet" href="css/skin/night-purple.css"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar">
+    <div class="page-loader"></div> <!-- Display loading image while page loads -->
+    <div class="body">
+
+        <!--========== BEGIN HEADER ==========-->
+        <header id="header" class="header-main">
+
+            <!-- Begin Navbar -->
+            <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+
+                <div class="container">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header" style="display:inline-block; width=100%!important;">
+                        <a class="navbar-brand page-scroll" style="margin: 0 auto;" href="{% url 'index' %}">See-v-See</a>
+                    </div>
+
+                </div><!-- /.container -->
+            </nav>
+            <!-- End Navbar -->
+
+        </header>
+        <!-- ========= END HEADER =========-->
+
+
+
+
+        <!-- Begin text carousel intro section -->
+        <section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5"
+            style="background-image: url({% static 'img/slider-bg.jpg' %});">
+
+            <div class="container">
+                <div class="text-white import" >
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                      <h1>Upload the file here:</h1>
+
+
+                      <div class="form-group file-area">
+                            <label for="images"><span>Your images should be at least 400x300 wide</span></label>
+                            {{ imp_image.as_p }}
+                        <div class="file-dummy" style="{{ form_bgcolor }}">
+                          <div class="default">{{message}}</div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <input type="submit" value="Get Started" style="padding: 10px 15px; background-color: transparent; border-color:white;">
+                      </div>
+
+                    </form>
+                    </div>
+                    </div>
+
+        </section>
+        <!-- End text carousel intro section -->
+
+        <!-- Begin footer -->
+        <!-- Begin footer -->
+        <footer class="text-off-white">
+
+
+            <div class="footer" style="position:absolute; width:100%; bottom:0;">
+                <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+                    <p class="copyright">Realizat de echipa See-V-See</p>
+                </div>
+            </div>
+
+        </footer>
+        <!-- End footer -->
+
+        <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
+
+    </div><!-- body ends -->
+
+
+
+
+    <!-- Plugins JS -->
+    <script src="{% static 'inc/jquery/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'inc/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'inc/owl-carousel/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'inc/stellar/js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'inc/animations/js/wow.min.js' %}"></script>
+    <script src="{% static 'inc/waypoints.min.js' %}"></script>
+    <script src="{% static 'inc/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'inc/classie.js' %}"></script>
+    <script src="{% static 'inc/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'inc/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'inc/smoothscroll.js' %}"></script>
+
+    <!-- Theme JS -->
+    <script src="{% static 'js/theme.js' %}"></script>
+
+</body>
+
+
+</html>

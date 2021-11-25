@@ -1,0 +1,23 @@
+{% extends 'homepage/base.html' %}
+
+{% block title %}
+second_page
+{% endblock %}
+
+
+{% block content %}
+<h1>Import Page</h1>
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!--<div class="import">
+        <label>Import Your Image</label>
+        <p>--------------------------</p>
+        <input type="file" name="import_image">
+        <input type="text" name="image_name">
+    </div>-->
+    {{ imp_image.as_p }}
+    <input type="submit" style="margin-top:15px" value="Get Started">
+</form>
+<p style="margin-top:30px; font-size:20px; margin-bottom:0; font-weight:700;">Last Import: {{name}}</p>
+<img src="{{ MEDIA_URL }}{{ image_link }}" alt="Nothing yet" style="width:300px; margin-top: 15px;">
+{% endblock %}
